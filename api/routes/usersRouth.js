@@ -7,7 +7,7 @@ module.exports=function(router){
 //GET
 
 router.post('/register',function(req,res){
-     // console.log(req.body)
+      console.log(req.body)
       const userData={
           name:req.body.name,
           email:req.body.email,
@@ -23,7 +23,7 @@ router.post('/register',function(req,res){
                       userData.password=hash
                       userModel.create(userData,(err)=>{
                           if(err){res.json({status:false, message:err})}
-                          else{res.json({status:true, message:`Registration sucessful!!!!`})}
+                          else{res.json({status:true, user:userData, message:`Registration sucessful!!!!`})}
                       })
                   })
               }

@@ -20,8 +20,8 @@ const monogUrl=process.env.MONGO_DB || 'mongodb://localhost:27017/earninggigs'
 mongoose.connect(monogUrl,{useNewUrlParser:true})
 
 
-
-if(process.env.NODE_ENV === 'production'){
+app.use('/api', api)
+if(process.env.NODE_ENV !== 'production'){
     //set static folder
    // app.use(express.static(path.join(__dirname, "client/build")));
   
@@ -38,7 +38,7 @@ if(process.env.NODE_ENV === 'production'){
 })
 }
 
-app.use('/api', api)
+
 
 const db=mongoose.connection
 
