@@ -5,8 +5,7 @@ require('dotenv').config()
 module.exports=function(router){
 
 //GET
-
-router.post('/register',function(req,res){
+router.post('/register', function(req,res){
       console.log(req.body)
       const userData={
           name:req.body.name,
@@ -34,11 +33,10 @@ router.post('/register',function(req,res){
 
           }
       })
-  })
+})
 
 //POST
-
-router.post('/login',(req,res) =>{
+router.post('/login', (req,res)=>{
     userModel.findOne({ phone: req.body.phone }, async (err, user) => {
         console.log(req.body)
         if (err) {
@@ -74,6 +72,6 @@ router.post('/login',(req,res) =>{
                 }
             }
         })
-    })
-//DELETE
+})
+
 }

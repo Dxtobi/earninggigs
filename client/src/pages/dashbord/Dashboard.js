@@ -69,9 +69,11 @@ function Dashboard() {
                   <button onClick={()=>showWithdrawMenu(true)} className='funds-btn-fund'>WITHDRAW</button>
         </div>
         <h4>Last Transactions</h4>
-        <div className={`transfers ${transLast.status}` }>
+        {transLast &&
+          <div className={`transfers ${transLast.status}`}>
           <div>{transLast.status}</div>
         </div>
+        }
         <h4>Start Earning</h4>
         {
           user.subscription ==="no sub" ? (<Link to='/subscribe' className='task-and-promotion linear-bg'>
