@@ -38,8 +38,6 @@ if(process.env.NODE_ENV === 'production'){
 })
 }
 
-
-
 app.use('/api', api)
 
 const db=mongoose.connection

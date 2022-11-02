@@ -7,7 +7,10 @@
     "start": "nodemon index.js",
     "install-client": "cd client && npm install",
     "docker-build-client": "NPM_CONFIG_PRODUCTION=false cd client && npm install && npm run build",
-    "docker-build-webapp": "concurrently \"npm run docker-build-client\" \"npm start\""
+    "docker-build-webapp": "concurrently \"npm run docker-build-client\" \"npm start\"",
+    "build": "cd client && npm run build",
+    "client-install": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build"
   },
   "engines": {
     "node": "16.13.1",
