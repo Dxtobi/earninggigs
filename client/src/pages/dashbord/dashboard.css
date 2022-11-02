@@ -1,0 +1,213 @@
+
+.header-section-dash-inline {
+    display: flex;
+    align-items: center;
+    font-size: larger;
+    justify-content: space-between;
+    text-transform: capitalize;
+    margin: 10px auto;
+}
+
+.header-section-dash-price {
+    padding: 10px;
+    margin: 10px auto;
+    background: linear-gradient(55deg, #1008a6, #0698ab);
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0px 20px 50px -10px #074063d6;
+}
+
+.header-section-dash-price-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: x-large;
+    margin: 10px auto;
+}
+.no-sub {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.funds-btn {
+    display: flex;
+    justify-content: space-between;
+    margin: 23px auto;
+    align-items: center;
+}
+.funds-btn-fund {
+    padding: 10px 30px;
+    border: 2px solid #1008a6;
+    background: white;
+    border-radius: 5px;
+    color: #1008a6;
+}
+.task-and-promotion {
+    
+    box-shadow: 0px 20px 20px -20px #000000b5;
+    padding: 18px;
+    text-decoration: none;
+    color: #1008a6;
+    display: flex;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+.linear-bg {
+    background: linear-gradient(45deg, #07fb62, #046565fc);
+    color: white;
+}
+.linear-bg1 {
+    background: linear-gradient(45deg, #0a2442, #0d0c0c);
+    color: white;
+    background: top;
+    background-size: cover;
+}
+.pesist-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: large;
+    font-weight: 700;
+}
+.transfers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    /* border: 2px solid blue; */
+    border-radius: 10px;
+}
+.transfers.Pending {
+    border: 2px solid #dea478;
+    color: #ff9200;
+}
+.transfers.PAID {
+    border: 2px solid #00ff2a;
+    color: #00ff2a;
+}
+
+.pesist-div-btn {
+    padding: 11px;
+    border: none;
+    color: white;
+    background: linear-gradient(45deg, #066424, #00a520ed);
+    border-radius: 5px;
+}
+.market-items-likes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.market-items-details {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.market-items {
+   
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 5px;
+    text-decoration: none;
+    margin: 10px 0px;
+}
+.market-items-price {
+    font-weight: 700;
+}
+.grid-holder-back {
+    width: 100%;
+    margin: auto;
+    background: #044dd1;
+    color: white;
+    box-shadow: inset -12px 5px 20px 3px #090c18b3;
+    text-transform: capitalize;
+}
+
+.grid-holder {
+    width: 100%;
+    margin: 30px auto;
+}
+
+img.market-items-img {
+    width: 45%;
+    border-radius: 5px;
+}
+.market-items-likes-element {
+    display: flex;
+    font-size: small;
+    /* padding: 5px; */
+    margin-top: 10px;
+    margin-right: 5px;
+    /* border: 1px solid darkgreen; */
+    border-radius: 5px;
+}
+.market-items-category {
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 5px 0px;
+}
+a.menu-link {
+    text-decoration: none;
+    padding: 19px;
+    border: 1px solid green;
+    color: green;
+    border-radius: 40px;
+}
+.menu-div {
+    position: fixed;
+    bottom: 0px;
+    background: #e0e0e0;
+    width: 100%;
+    left: 0px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px 20px 0px 0px;
+    align-items: center;
+    justify-content: center;
+}
+.menu-btn {
+    padding: 10px;
+    margin: 10px 0px;
+    border-radius: 50px;
+    border: 1px solid #9b3434;
+    color: #802d2d;
+}
+.menu-float {
+    position: fixed;
+    background: white;
+    left: 0px;
+    height: 100vh;
+    padding: 20px;
+    right: 0px;
+}
+
+.account-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+.confirm-withdraw {
+    margin: 10px auto;
+    border-bottom: 2px solid;
+    text-transform: uppercase;
+    padding: 20px 0px;
+}
+img.reefer-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.site-link-reefer{
+        text-align: center;
+        padding: 10px;
+        border: 1px solid;
+        box-shadow: inset 0px 0px 20px 2px #00000057;
+}

@@ -1,0 +1,82 @@
+.sectionOne-text-top {
+    font-size: x-large;
+    font-weight: bolder;
+    line-height: 1.8;
+    margin: 10px 0px;
+  }
+  .sectionOne-text-sec {
+    font-size: large;
+  }
+  
+  .sectionOne-text {
+    font-size: large;
+    line-height: 1.5;
+    margin: 25px 0px;
+  }
+  
+  .special-text {
+    color: #12c720;
+    font-weight: bold;
+  }
+  .review-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.review-div-number {
+    font-size: 5rem;
+    font-weight: 700;
+}
+.review-div-disc {
+    font-size: xx-large;
+}
+.rating {
+    display: flex;
+    font-size: xx-large;
+    color: goldenrod;
+}
+.review-div-text {
+    width: 80%;
+    margin: 10px auto;
+    padding: 25px;
+    box-shadow: 0px 20px 50px -5px #0000005c;
+    border-radius: 9px;
+}
+.rating-text {
+    line-height: 1.5;
+    margin: 20px 0px;
+}
+
+  img.sectionOne-img {
+    border-radius: 10px;
+    box-shadow: 0px 20px 20px -5px #00000045;
+    margin: auto;
+    width: 100%;
+  }
+  
+  .price-comp {
+    width: 80%;
+    margin: 40px auto;
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 20px 50px -10px #0000004f;
+    border-radius: 10px;
+}
+.price-type {
+    margin: 20px auto;
+    font-weight: 900;
+    font-size: larger;
+    color: #636363;
+}
+.price-amount {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: #444242;
+    margin: 10px auto;
+}
+.price-discretion {
+    padding: 20px;
+    line-height: 2;
+}
