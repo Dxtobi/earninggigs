@@ -27,7 +27,7 @@ if(process.env.NODE_ENV === 'production'){
   
   app.use(express.static(root));
   
-  //console.log('😸', path.join(__dirname, "client/build"), '😸')
+  console.log('😸 in production............')
   app.get("*", (req, res) => {
  
     if (!req.path.includes('api')) {
