@@ -31,7 +31,7 @@ function SalesAndServices() {
                       topUser.map((e, i) => {
                           return (
                             <div key={i} className='market-items'>
-                            <img src={'./static/images/ideas.jfif'} alt='' className='recentActivities-img' />
+                            <img src={'/static/images/ideas.jfif'} alt='' className='recentActivities-img' />
                             <div className='market-items-details'>
                                       <div className='market-items'>{e.name}<br/> has a Total Earning of NGN{e.totalEarning}</div>
                             </div>

@@ -7,7 +7,7 @@ import {useEffect, useState} from 'react'
 import { getActivities } from "../../reducers/actions/Auth";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-//const pics = '/static/images/ann.jfif'
+const pics = '/static/images/ann.jfif'
 function RecentActivities() {
  //const auth = useSelector((state) => state.auth);
   // const {name, currentBallance, subscription} = auth.user
