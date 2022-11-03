@@ -19,7 +19,7 @@ require('dotenv').config()
 const monogUrl=process.env.MONGO_DB || 'mongodb://localhost:27017/earninggigs'
 mongoose.connect(monogUrl,{useNewUrlParser:true})
 
-
+app.use('/api', api)
 
 if(process.env.NODE_ENV === 'production'){
     //set static folder
@@ -30,14 +30,12 @@ if(process.env.NODE_ENV === 'production'){
   console.log('😸 in production............')
   app.get("*", (req, res) => {
  
-    if (!req.path.includes('api')) {
+   
       res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    } else {
-      console.log('this is the error 😸 ')
-        }
+    
 })
 }
-app.use('/api', api)
+
 
 
 const db=mongoose.connection
