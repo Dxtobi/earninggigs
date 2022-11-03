@@ -5,9 +5,9 @@ import {useEffect, useState} from 'react'
 //import { Link } from 'react-router-dom';
 
 import { getActivities } from "../../reducers/actions/Auth";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-
-const pics = '/static/images/ann.jfif'
+//const pics = '/static/images/ann.jfif'
 function RecentActivities() {
  //const auth = useSelector((state) => state.auth);
   // const {name, currentBallance, subscription} = auth.user
@@ -37,7 +37,7 @@ function RecentActivities() {
                     dataArr.map((e, i) => {
                           return (
                             <div key={i} className='recentActivities'>
-                            <img src={pics} alt='' className='recentActivities-img' />
+                            <AccountCircleIcon/>
                             <div className='recentActivities-text'>
                                 {e.description}
                             </div>

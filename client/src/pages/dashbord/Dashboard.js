@@ -14,6 +14,7 @@ import { getCurrentUser, getLastTrans } from '../../reducers/actions/Auth';
 import jwt_decode from 'jwt-decode';
 import Withdraw from '../../components/market/Withdraw';
 import Loading from '../../components/fixed/Loading';
+
 //const defaultSub = "no sub"
 function Dashboard() {
   
@@ -101,7 +102,7 @@ function Dashboard() {
               )
         }
         <h4>Boost Accounts</h4>
-              <Link style={{backgroundImage:`url(${'/static/images/ideas.jfif'})`}} to='/create-tasks' className='task-and-promotion linear-bg1'>
+              <Link to='/create-tasks' className='task-and-promotion linear-bg1'>
                   <div >
                     <div style={{fontSize:'x-large'}}>Boot </div>
                       <div>
@@ -140,7 +141,7 @@ function Dashboard() {
         <br/>
         <img alt='' src='/static/images/egigs.png' className='reefer-img' />
         <br/>
-      <div className='site-link-reefer'>https://www.{window.location.hostname}/referer/{auth.user.name}</div>
+      <div className='site-link-reefer'>https://{window.location.hostname}/referer/{auth.user._id}</div>
       </div>
    
       <div className="page-inner" >
