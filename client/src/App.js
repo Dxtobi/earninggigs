@@ -85,9 +85,12 @@ function App() {
       <MenuAppBar />
         {
           <Routes>
-                <Route index path="/" element={<Welcome />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
+            <Route index path="/" element={<Welcome />} />
+            
+            <Route path="/login" element={<Login />} />
+            
+            <Route path="/register" element={<Register />} />
+            <Route path="/refer/:name" element={<Register />} />
                 <Route element={<ProtectedRoute user={auth.auth} />}>
                   <Route path="/subscribe" element={<Subscriptions />} />
                   <Route path="/dashboard" element={<Dashboard />} />

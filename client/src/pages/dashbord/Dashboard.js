@@ -140,7 +140,7 @@ function Dashboard() {
         <br/>
         <img alt='' src='/static/images/egigs.png' className='reefer-img' />
         <br/>
-      <div className='site-link-reefer'>https://www.{window.location.hostname}</div>
+      <div className='site-link-reefer'>https://www.{window.location.hostname}/referer/{auth.user.name}</div>
       </div>
    
       <div className="page-inner" >
