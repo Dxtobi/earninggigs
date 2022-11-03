@@ -6,7 +6,7 @@
 
 import { useEffect, useState } from "react";
 import { getTopUsers } from "../../reducers/actions/Auth";
-
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 function SalesAndServices() {
     const [topUser, setUser]= useState([])
@@ -31,7 +31,7 @@ function SalesAndServices() {
                       topUser.map((e, i) => {
                           return (
                             <div key={i} className='market-items'>
-                            <img src={'/static/images/ideas.jfif'} alt='' className='recentActivities-img' />
+                            <AccountCircleIcon className='recentActivities-img' />
                             <div className='market-items-details'>
                                       <div className='market-items'>{e.name}<br/> has a Total Earning of NGN{e.totalEarning}</div>
                             </div>
