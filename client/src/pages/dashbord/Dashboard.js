@@ -13,10 +13,12 @@ import FundAccounts from '../../components/market/FundAccounts';
 import { getCurrentUser, getLastTrans } from '../../reducers/actions/Auth';
 import jwt_decode from 'jwt-decode';
 import Withdraw from '../../components/market/Withdraw';
+import Loading from '../../components/fixed/Loading';
 //const defaultSub = "no sub"
 function Dashboard() {
   
   const [fundMenu, showFundMenu] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [fundWithddraw, showWithdrawMenu] = useState(false)
   const [user, setUser] = useState({})
   const [transLast, setUserTrans] = useState({})
@@ -33,9 +35,13 @@ function Dashboard() {
       setUserTrans(d1.data)
       console.log(d1)
     }
-    const user = jwt_decode(d.token);
-    setUser(user)
-    console.log(user);
+    if (d.status) {
+      setLoading(false)
+      const user = jwt_decode(d.token);
+      setUser(user)
+    }
+    
+    //console.log(user);
     return
   }
 
@@ -48,6 +54,9 @@ function Dashboard() {
   }, [])
   
 
+  if (loading) {
+    return <Loading/>
+  }
   return (
       <div className="page" >
       <div className="page-inner" >
