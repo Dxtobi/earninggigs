@@ -101,7 +101,7 @@ function Dashboard() {
               )
         }
         <h4>Boost Accounts</h4>
-              <Link style={{backgroundImage:`url(${'./static/images/ideas.jfif'})`}} to='/create-tasks' className='task-and-promotion linear-bg1'>
+              <Link style={{backgroundImage:`url(${'/static/images/ideas.jfif'})`}} to='/create-tasks' className='task-and-promotion linear-bg1'>
                   <div >
                     <div style={{fontSize:'x-large'}}>Boot </div>
                       <div>
