@@ -211,4 +211,5 @@ img.reefer-img {
         padding: 10px;
         border: 1px solid;
         box-shadow: inset 0px 0px 20px 2px #00000057;
+        overflow: scroll;
 }
