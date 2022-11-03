@@ -21,7 +21,7 @@ mongoose.connect(monogUrl,{useNewUrlParser:true})
 
 
 
-if(process.env.NODE_ENV !== 'production'){
+if(process.env.NODE_ENV === 'production'){
     //set static folder
     app.use(express.static("client/build"));
   
