@@ -62,7 +62,7 @@
 .linear-bg1 {
     background: linear-gradient(45deg, #0a2442, #0d0c0c);
     color: white;
-    background: top;
+    background-position: top;
     background-size: cover;
 }
 .pesist-div {
