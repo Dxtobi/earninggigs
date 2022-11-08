@@ -57,7 +57,7 @@ function Welcome() {
             <div className='first-div-header2'>
               Stand a chance to win <b style={{color:'white'}}>NGN25K</b> Weekly on our telegram platform.
             </div>
-            <button className='win-big-btn' onClick={()=>window.open('https://t.me/+H6DgszePE5s4OTg0', '_blank')}>JOIN CHANNEL</button>
+            <button className='win-big-btn' onClick={()=>window.open('https://t.me/officialearninggigs', '_blank')}>JOIN CHANNEL</button>
           </div>
           <div className='first-div-header-img'>
             <img alt='' src='/static/images/win.png' className='first-div-header-img-img'/>
