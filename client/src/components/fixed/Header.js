@@ -185,7 +185,7 @@ export default function MenuAppBar() {
           </ListItem>
         
           <ListItem  disablePadding>
-              <ListItemButton onClick={()=>window.open('https://t.me/+H6DgszePE5s4OTg0', '_blank')}>
+              <ListItemButton onClick={()=>window.open('https://t.me/officialearninggigs', '_blank')}>
                 <ListItemIcon>
                   <TelegramIcon style={{color:'white'}}/>
                 </ListItemIcon>
@@ -205,7 +205,7 @@ export default function MenuAppBar() {
         </div>
       </Drawer>
       <AppBar position="fixed" style={{background:'#ffffff00', color:'black'}}  >
-        <div style={{background:'#4a0e77bd', color:'white'}} className='enableBlur'>
+        <div style={{background:'##4a0e7780', color:'white'}} className='enableBlur'>
           <Toolbar className='disableBlur'>
             <IconButton onClick={handleDrawerOpen}
               size="large"
@@ -247,13 +247,13 @@ export default function MenuAppBar() {
                   open={Boolean(anchorEl)}
                   onClose={handleClose}
                 >
-                  <MenuItem onClick={handleClose}><Link to='/dashboard' style={{textDecoration:'none', color:'green'}}>Profile</Link></MenuItem>
+                  <MenuItem onClick={handleClose}><Link to='/dashboard' style={{textDecoration:'none', color:'white'}}>Profile</Link></MenuItem>
                   
                   <MenuItem onClick={()=>{
                     dispatch(clearAuth()) 
                   handleClose()}}>Logout</MenuItem>
                 </Menu>) : (
-                    <Link className='disableBlur' to='/login' style={{textDecoration:'none', color:'green'}}>Login</Link>
+                    <Link className='disableBlur' to='/login' style={{textDecoration:'none', color:'white'}}>Login</Link>
                 )
               }
               </div>
