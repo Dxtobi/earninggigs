@@ -138,6 +138,9 @@ function Dashboard() {
           <h3>REEFER AND EARN</h3>
           <div>Use the link and image below to reefer your friends and get 10% every time your friends purchase a subscription</div>
         </div>
+        <br />
+        <div className='ref-div'><button onClick={()=>window.open('/referrers')} className='funds-btn-fund'>My Referrance</button></div>
+        <br />
         <br/>
         <img alt='' src='/static/images/egigs.png' className='reefer-img' />
         <br/>

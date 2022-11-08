@@ -3,8 +3,24 @@ import setAuthToken, { instance } from "../../utils/axiosDefault"
 //import { setAuth } from "../slices/Auth";
 
 
+//get-withdraw-request
 
 
+export const myReferrers = async (data) => {
+
+   const d = await instance.get('/get-user-referrers/'+data)
+   .then(res => {
+        console.log(res.data)
+       return res.data
+    } )
+    .catch( err =>
+    { 
+       return {status:'false', message:'something went wrong'}
+    }
+      );
+
+   return d
+ };
 export const register = async (data) => {
 
     const d = await instance.post('/register', data)

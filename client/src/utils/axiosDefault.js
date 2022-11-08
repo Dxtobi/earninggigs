@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const instance = axios.create({
-  baseURL: 'https://earninggigs.herokuapp.com/api/'
+  baseURL:'https://earninggigs.herokuapp.com/api/'//'http://localhost:8081/api/'//
 });
 //axios.defaults.baseURL = 'http://localhost:8081/'
 const setAuthToken = token => {

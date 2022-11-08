@@ -7,6 +7,7 @@ import { login } from '../../reducers/actions/Auth';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setAuth } from '../../reducers/slices/Auth';
+import Loading from '../../components/fixed/Loading';
 //import { register } from '../../reducers/';
 
 
@@ -18,6 +19,7 @@ function Login() {
    
     const [pass, setPass] = useState('')
     const [phone, setPhone] = useState('')
+    const [loading, setLoading] = useState(false)
     
     
     const [error, setError] = useState('')
@@ -27,18 +29,25 @@ function Login() {
 
 
     const handleSubmit = async () => {
+        setLoading(true)
         if (pass === '' || phone === '' ) {
             return setError('SOME DETAILS ARE NECESSARY')
         }
         const res = await login({pass, phone})
-        if (res.status) {
+        if (res.status === true) {
             dispatch(setAuth(res.token))
             return navigate('/dashboard')
+        } else {
+            setLoading(false)
         }
+        
         return setError(res.message)
+
     }
 
-    
+    if (loading) {
+        return <Loading/>
+    }
   return (
     <div className="page" >
           <div className='form-holder'>

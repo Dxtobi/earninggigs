@@ -55,7 +55,7 @@ function CreateTasks() {
 
     //console.log('enterd')
     if (currentBallance < paying) {
-      return setError({surrency:'YOU DO NOT SUFFICENT FUNDS'})
+      return setError({surrency:'INSUFFICIENT FUNDS'})
     }
     const res = await createAction({ type: activityType, platform: socialMediaType, link: socialLink, paying: paying, uid:auth.user._id })
     if (res.status) {

@@ -6,6 +6,7 @@ const userModel = require('../models/userModel');
 const ResentActivities = require('../models/ResentActivities');
 const Withdraw = require('../models/Withdraw');
 const sendEmail = require('../sendEmail');
+const Referer = require('../models/Referer');
 require('dotenv').config()
 
 
@@ -117,8 +118,23 @@ module.exports = function (router) {
                 if (data && data.type !== 'funding') {
                     userModel.findOne({ email: req.body.email }).then((user) => {
                         //user.currentBallance += parseFloat(data.type)
-                        user.subscription = data.amount === '5000' ? 'BASIC' : data.amount === '10000'? 'GOLD': data.amount === '15000'? 'DIAMOND':'PREMIUM'
+                        user.subscription = data.amount === '5000' ? 'BASIC' : data.amount === '10000'? 'GOLD': data.amount === '15000'? 'DIAMOND':'SIMPLE'
                         user.save().then((newUser) => {
+                            if (newUser.referer !== 'no referer') {
+                                userModel.findOne({ email: newUser.ref }).then((referer)=>{
+                                    referer.currentBallance = parseFloat(referer.currentBallance) + 500
+                                    ResentActivities.create({
+                                        user: referer._id,
+                                        description:`${referer.name} Just Earned NGN500 referer`
+                                    })
+
+                                    Referer.create({
+                                        user: referer._id,
+                                        description:`You Earned NGN500 for refering ${newUser.name}`
+                                    })
+                                    referer.save()
+                                })
+                            }
                             Coupon.findOneAndRemove({ code: req.body.coupon }).then(() => {
                                 console.log(newUser)
                                 try{
@@ -399,6 +415,19 @@ module.exports = function (router) {
         try {
             console.log(req.body)
             ResentActivities.find().limit(6).sort({date:-1}).then((act)=>{
+              //  console.log(act)
+                res.json({status:true, message:'', data:act})
+            })
+        } catch (err) {
+            console.log(err)
+            res.json({status:false, message:'something went wrong'})
+        }
+    })
+
+    router.get('/get-user-referrers/:id', function (req, res) {
+        try {
+            console.log(req.params)
+            Referer.find({user:req.params.id}).sort({date:-1}).then((act)=>{
               //  console.log(act)
                 res.json({status:true, message:'', data:act})
             })

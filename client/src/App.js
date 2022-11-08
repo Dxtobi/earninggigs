@@ -22,6 +22,8 @@ import SubscriptionsFund from './pages/subscribtion/FundAccount';
 import NOTFOUND from './components/fixed/NotFound';
 import CreateAds from './pages/Ads/CreateAds';
 import ConfirmWithdraw from './pages/generatecoupon/ConfirmWithdraw';
+import Spinner from './pages/spinwheel/Spinner'
+import MyReferrers from './pages/Referers/referers';
 //import PrivateRoute from './components/fixed/PrivateRoute';
 
 
@@ -96,6 +98,9 @@ function App() {
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/fund-account" element={<SubscriptionsFund />} />
                   <Route path="/create-tasks" element={<CreateTasks />} />
+                  <Route path="/feeling-lucky" element={<Spinner />} />
+                  <Route path="/referrers" element={<MyReferrers />} />
+
               <Route path="/tasks" element={<AvailableTasks />} />
 
               <Route path="/post-ads" element={<CreateAds />} />

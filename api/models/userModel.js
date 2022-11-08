@@ -12,15 +12,17 @@ const userSchema = new mongoose.Schema({
   currentBallance: {
       type: Number,
       default: 0
-  },    
+  },
   totalEarning: {
     type: Number,
-      default: 0
-  },  subscription: {
+    default: 0
+  },
+  subscription: {
     type: String,
     default: 'no sub'
   },
-  ref: { type: String },
+  ref: { type: String,
+  default: 'no referer' },
   
 });
 module.exports=mongoose.model('user',userSchema)

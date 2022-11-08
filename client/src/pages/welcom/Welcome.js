@@ -23,6 +23,47 @@ function Welcome() {
       {
         //WEBSITE INTRO....................
       }
+      <div className="page-inner-100p">
+        <div className='first-div'>
+          <div className='first-div-header-wrapper'>
+            <div className='first-div-header'>
+              BOOST YOUR <br/> SOCIAL MEDIA ACCOUNTS
+            </div>
+            <div className='first-div-header1'>
+            FAME MAGNET
+            </div>
+            <div className='first-div-header2'>
+              Get real followers, likes, comments and subscribers<br />
+              on all your social media platforms.
+            </div>
+          </div>
+          <div className='first-div-header-img'>
+            <img alt='' src='/static/images/gain.png' className='first-div-header-img-img'/>
+          </div>
+        </div>
+      </div>
+      <div className="page-inner-100p">
+        <div className='second-div'>
+          <div className='first-div-header-wrapper'>
+          <div>
+            E - GAMES
+          </div>
+            <div className='first-div-header'>
+              WIN BIG <br/> WITH OUR E-GAMES SECTIONS
+            </div>
+            <div className='first-div-header1'>
+            WIN BIG
+            </div>
+            <div className='first-div-header2'>
+              Stand a chance to win <b style={{color:'white'}}>NGN25K</b> Weekly on our telegram platform.
+            </div>
+            <button className='win-big-btn' onClick={()=>window.open('https://t.me/+H6DgszePE5s4OTg0', '_blank')}>JOIN CHANNEL</button>
+          </div>
+          <div className='first-div-header-img'>
+            <img alt='' src='/static/images/win.png' className='first-div-header-img-img'/>
+          </div>
+        </div>
+      </div>
       <div className="page-inner">
           <div className="sectionOne">
               <div className="sectionOne-text-top" style={{fontSize:'xx-large'}}>ITS EASIER WHEN ITS FUN, NOT WORK</div>
@@ -144,6 +185,17 @@ function Welcome() {
       }
       <div ref={myRef3} className="page-inner-100p">
       <div className="sectionOne-text-top" style={{textAlign:'center'}}>AVAILABLE SUBSCRIPTIONS</div>
+        <div className='price-comp'>
+          <div className='price-type'>S I M P L E</div>
+          <div className='price-amount'>₦1500</div>
+          <div className='price-discretion'>
+            The return value for each task is at ₦100<br />
+            Maximum withdrawal: ₦3000<br/>
+            Minimum withdrawal: ₦3000<br/>
+          </div>
+          <br/>
+          <Link className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} to='/register'>SUBSCRIBE</Link>
+        </div>
         <div className='price-comp'>
           <div className='price-type'>B A S I C</div>
           <div className='price-amount'>₦5000</div>

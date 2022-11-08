@@ -79,12 +79,24 @@ export default function Subscriptions() {
           <div className="page-inner-100p">
             <div className="sectionOne-text-top" style={{textAlign:'center'}}>AVAILABLE SUBSCRIPTIONS</div>
                 <div className='price-comp'>
+                <div className='price-type'>S I M P L E</div>
+                <div className='price-amount'>₦1500</div>
+                <div className='price-discretion'>
+                    The return value for each task is at ₦100<br />
+                    Maximum withdrawal: ₦3000<br />
+                    Minimum withdrawal: ₦3000<br/>
+                </div>
+                <br/>
+                <button onClick={handleOpen} className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} to='/register'>SUBSCRIBE</button>
+                </div>
+                
+                <div className='price-comp'>
                 <div className='price-type'>B A S I C</div>
                 <div className='price-amount'>₦5000</div>
                 <div className='price-discretion'>
-                    The return value for each task is at ₦250<br />
-                    Maximum withdrawal: ₦15000<br />
-                    Minimum withdrawal: ₦10000<br/>
+                    The return value for each task is at ₦150<br />
+                    Maximum withdrawal: ₦10000<br />
+                    Minimum withdrawal: ₦8000<br/>
                 </div>
                 <br/>
                 <button onClick={handleOpen} className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} to='/register'>SUBSCRIBE</button>
@@ -94,8 +106,8 @@ export default function Subscriptions() {
                 <div className='price-type'>G O L D</div>
                 <div className='price-amount'>₦10000</div>
                 <div className='price-discretion'>
-                    The return value for each task is at ₦500<br />
-                    Maximum withdrawal: ₦30000<br />
+                    The return value for each task is at ₦250<br />
+                    Maximum withdrawal: ₦20000<br />
                     Minimum withdrawal: ₦15000<br />
                 </div>
                 <br/>
@@ -106,8 +118,8 @@ export default function Subscriptions() {
                 <div className='price-type'>D I A M O N D</div>
                 <div className='price-amount'>₦15000</div>
                 <div className='price-discretion'>
-                    The return value for each task is at ₦850<br />
-                    Maximum withdrawal: ₦51000<br />
+                    The return value for each task is at ₦400<br />
+                    Maximum withdrawal: ₦30000<br />
                     Minimum withdrawal: ₦20000<br/>
                 </div>
                 <br/>
@@ -122,13 +134,22 @@ export default function Subscriptions() {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
+                <br/>
+                <br/>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                    S I M P L E
+                </Typography>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                <a href='https://wa.me/message/IAU7SLUDMHWQN1' rel="noreferrer" target="_blank" className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} >SUBSCRIBE</a>
+                    </Typography>
+                    <br />
+                <br />
                 <Typography id="modal-modal-title" variant="h6" component="h2">
                     B A S I C
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 <a href='https://wa.me/message/IAU7SLUDMHWQN1' rel="noreferrer" target="_blank" className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} >SUBSCRIBE</a>
                 </Typography>
-               
 
                 <br/>
                 <br/>

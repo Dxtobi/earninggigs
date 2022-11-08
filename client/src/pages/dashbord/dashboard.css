@@ -187,6 +187,7 @@ a.menu-link {
     height: 100vh;
     padding: 20px;
     right: 0px;
+    top:0px
 }
 
 .account-details {
@@ -212,4 +213,9 @@ img.reefer-img {
         border: 1px solid;
         box-shadow: inset 0px 0px 20px 2px #4650ff2d;
         overflow: scroll;
+}
+
+.ref-div {
+    display: flex;
+    justify-content: center;
 }

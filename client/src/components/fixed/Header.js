@@ -15,9 +15,9 @@ import Divider from '@mui/material/Divider';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import FacebookIcon from '@mui/icons-material/Facebook';
+//import FacebookIcon from '@mui/icons-material/Facebook';
 import TelegramIcon from '@mui/icons-material/Telegram';
-import InstagramIcon from '@mui/icons-material/Instagram';
+//import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
@@ -73,7 +73,10 @@ export default function MenuAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-
+ 
+  const changeNavbarColor = () => {
+    console.log('scrolling....')
+  }
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -91,6 +94,8 @@ export default function MenuAppBar() {
     setAnchorEl(null);
   };
 
+  window.addEventListener('scroll', changeNavbarColor);
+
   return (
     <Box sx={{ flexGrow: 1 }}>
        <Drawer
@@ -102,12 +107,14 @@ export default function MenuAppBar() {
             boxSizing: 'border-box',
           },
         }}
+        className='dxtdx'
         variant="persistent"
         anchor="left"
         open={open}
       >
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
+        <div className='enableBlur' style={{color:'white'}}>
+          <DrawerHeader >
+          <IconButton onClick={handleDrawerClose} style={{color:'#ffff'}}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
@@ -117,7 +124,7 @@ export default function MenuAppBar() {
             <ListItem  disablePadding>
               <ListItemButton onClick={()=>navigate('/')}>
                 <ListItemIcon>
-                  <HomeIcon/>
+                  <HomeIcon style={{color:'white'}}/>
                 </ListItemIcon>
                 <ListItemText primary={'HOME'} />
               </ListItemButton>
@@ -125,15 +132,23 @@ export default function MenuAppBar() {
             <ListItem  disablePadding>
               <ListItemButton onClick={()=>navigate('/tasks')}>
                 <ListItemIcon>
-                  <ListIcon/>
+                  <ListIcon style={{color:'white'}}/>
                 </ListItemIcon>
                 <ListItemText primary={'TASKS'} />
               </ListItemButton>
           </ListItem>
           <ListItem  disablePadding>
+              <ListItemButton onClick={()=>navigate('/feeling-lucky')}>
+                <ListItemIcon>
+                  <ArrowUpwardIcon style={{color:'white'}}/>
+                </ListItemIcon>
+                <ListItemText primary={'LUCKY SPIN'} />
+              </ListItemButton>
+          </ListItem>
+          <ListItem  disablePadding>
               <ListItemButton onClick={()=>navigate('/create-tasks')}>
                 <ListItemIcon>
-                  <ArrowUpwardIcon/>
+                  <ArrowUpwardIcon style={{color:'white'}}/>
                 </ListItemIcon>
                 <ListItemText primary={'BOOST'} />
               </ListItemButton>
@@ -142,120 +157,109 @@ export default function MenuAppBar() {
           <ListItem  disablePadding>
               <ListItemButton onClick={()=>window.open('/dashboard')}>
                 <ListItemIcon>
-                  <TabIcon/>
+                  <TabIcon style={{color:'white'}}/>
                 </ListItemIcon>
                 <ListItemText primary={'DASHBOARD'} />
               </ListItemButton>
           </ListItem>
         </List>
         <Divider />
-
+        
         <List>
           <ListItem  disablePadding>
               <ListItemButton onClick={()=>window.open('https://wa.me/message/VEQ45B6UTXT3E1', '_blank')}>
                 <ListItemIcon>
-                  <WhatsAppIcon/>
+                  <WhatsAppIcon style={{color:'white'}}/>
                 </ListItemIcon>
                 <ListItemText primary={'WHATSAPP'} />
               </ListItemButton>
           </ListItem>
+          
           <ListItem  disablePadding>
               <ListItemButton onClick={()=>window.open('https://twitter.com/earningig_ng', '_blank')}>
                 <ListItemIcon>
-                  <InstagramIcon/>
-                </ListItemIcon>
-                <ListItemText primary={'INSTAGRAM'} />
-              </ListItemButton>
-          </ListItem>
-          <ListItem  disablePadding>
-              <ListItemButton onClick={()=>window.open('https://twitter.com/earningig_ng', '_blank')}>
-                <ListItemIcon>
-                  <TwitterIcon/>
+                  <TwitterIcon style={{color:'white'}}/>
                 </ListItemIcon>
                 <ListItemText primary={'TWITTER'} />
               </ListItemButton>
           </ListItem>
-          <ListItem  disablePadding>
-              <ListItemButton onClick={()=>window.open('https://www.facebook.com/profile.php?id=100087169937774', '_blank')}>
-                <ListItemIcon>
-                  <FacebookIcon/>
-                </ListItemIcon>
-                <ListItemText primary={'FACEBOOK'} />
-              </ListItemButton>
-          </ListItem>
+        
           <ListItem  disablePadding>
               <ListItemButton onClick={()=>window.open('https://t.me/+H6DgszePE5s4OTg0', '_blank')}>
                 <ListItemIcon>
-                  <TelegramIcon/>
+                  <TelegramIcon style={{color:'white'}}/>
                 </ListItemIcon>
                 <ListItemText primary={'TELEGRAM'} />
               </ListItemButton>
           </ListItem>
           <ListItem  disablePadding>
-              <ListItemButton onClick={()=>window.open('/https://wa.me/2349014928393', '_blank')}>
+              <ListItemButton onClick={()=>window.open('https://wa.me/2349014928393', '_blank')}>
                 <ListItemIcon>
-                  <SupportAgentOutlinedIcon/>
+                  <SupportAgentOutlinedIcon style={{color:'white'}}/>
                 </ListItemIcon>
                 <ListItemText primary={'SUPPORT'} />
               </ListItemButton>
           </ListItem>
           
         </List>
+        </div>
       </Drawer>
-      <AppBar position="fixed" style={{ background: '#ffffff', color:'green' }}>
-        <Toolbar>
-          <IconButton onClick={handleDrawerOpen}
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Earngigs
-          </Typography>
-          
-            <div>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-            {
-              auth.auth ? ( <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose}><Link to='/dashboard' style={{textDecoration:'none', color:'green'}}>Profile</Link></MenuItem>
-                
-                <MenuItem onClick={()=>{
-                  dispatch(clearAuth()) 
-                handleClose()}}>Logout</MenuItem>
-              </Menu>) : (
-                  <Link to='/login' style={{textDecoration:'none', color:'green'}}>Login</Link>
-              )
-             }
-            </div>
-          
-        </Toolbar>
+      <AppBar position="fixed" style={{background:'#ffffff00', color:'black'}}  >
+        <div style={{background:'#4a0e77bd', color:'white'}} className='enableBlur'>
+          <Toolbar className='disableBlur'>
+            <IconButton onClick={handleDrawerOpen}
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon/>
+            </IconButton>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Earngigs
+            </Typography>
+            
+              <div>
+              {  auth.auth && <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleMenu}
+                  color="inherit"
+                >
+                  <AccountCircle className='disableBlur'/>
+                </IconButton>}
+              {
+                auth.auth ? ( <Menu className='disableBlur'
+                  id="menu-appbar"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}
+                >
+                  <MenuItem onClick={handleClose}><Link to='/dashboard' style={{textDecoration:'none', color:'green'}}>Profile</Link></MenuItem>
+                  
+                  <MenuItem onClick={()=>{
+                    dispatch(clearAuth()) 
+                  handleClose()}}>Logout</MenuItem>
+                </Menu>) : (
+                    <Link className='disableBlur' to='/login' style={{textDecoration:'none', color:'green'}}>Login</Link>
+                )
+              }
+              </div>
+            
+          </Toolbar>
+        </div>
       </AppBar>
     </Box>
   );

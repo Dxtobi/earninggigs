@@ -80,3 +80,10 @@
     padding: 20px;
     line-height: 2;
 }
+button.win-big-btn {
+  padding: 15px;
+  background: none;
+  border: 2px solid white;
+  color: white;
+  outline: none;
+}

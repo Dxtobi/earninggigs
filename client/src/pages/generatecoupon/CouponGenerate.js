@@ -36,14 +36,22 @@ export default function CouponGenerate() {
             <div className='form-holder'>
               <div className="sectionOne-text-top" style={{ fontSize: 'x-large', marginTop: 80, color:'green' }}>ENTER COUPON PRICE</div>
               <div className='input-holder'>
-                <select onChange={(e) => setCode(e.target.value)} placeholder="" className='input-input' value={code}>
-                        <option value=''>-----</option>
-                        <option value='5000'>₦5000</option>
+            <select onChange={(e) => setCode(e.target.value)} placeholder="" className='input-input' value={code}>
+              
+              <option value=''>-----</option>
+              
+              <option value='1500'>₦1500</option>
+              <option value='5000'>₦5000</option>
                         <option value='10000'>₦10000</option>
+
                         <option value='15000'>₦15000</option>
+
                 </select>
+
               </div>
+
             <button className='auth-btn' onClick={handleSubmit}>GENERATE</button>
+
           </div>
       </div>
   )
