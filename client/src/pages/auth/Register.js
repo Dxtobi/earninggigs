@@ -8,7 +8,7 @@ import './Login.css';
 import { register } from '../../reducers/actions/Auth';
 import { Link, useNavigate } from 'react-router-dom';
 //import { register } from '../../reducers/';
-
+import Loading from '../../components/fixed/Loading';
 
 
 
@@ -21,7 +21,7 @@ function Register() {
     const [phone, setPhone] = useState('')
     const [ref, setRef] = useState('')
     const [error, setError] = useState('')
-    
+    const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
 
   
@@ -31,14 +31,18 @@ function Register() {
         if (name === '' || pass === '' || email === '' || phone === '') {
             return setError('SOME DETAILS ARE NECESSARY')
         }
+        setLoading(true)
         const res = await register({name, pass, email, phone, ref})
         if (res.status) {
            return navigate('/login')
         }
+        setLoading(false)
         return setError(res.message)
     }
 
-    
+    if(loading){
+       return <Loading/>
+    }
   return (
     <div className="page" >
           <div className='form-holder'>

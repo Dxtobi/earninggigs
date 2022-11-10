@@ -7,6 +7,7 @@ import { confirmCoupon } from '../../reducers/actions/Auth';
 import { setAuth } from '../../reducers/slices/Auth';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../components/fixed/Loading';
 //import { Link } from 'react-router-dom';
 
 const style = {
@@ -25,6 +26,7 @@ export default function Subscriptions() {
     const auth = useSelector((state) => state.auth);
     const {email} = auth.user
     const [open, setOpen] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [coupon, setCoupon] = useState('');
     const handleOpen = () => setOpen(true);
@@ -33,7 +35,9 @@ export default function Subscriptions() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const handleSubmit = async () => {
+        setLoading(true)
         if (coupon === '' || coupon.length < 6) {
+            setLoading(false)
             return setError({message:'Invalid Coupon'})
         }
         const d = await confirmCoupon({ coupon: coupon, email: email });
@@ -42,13 +46,17 @@ export default function Subscriptions() {
         if (d.status === true) {
            
             dispatch(setAuth(d.token))
-
+            setLoading(false)
              navigate('/dashboard')
         } else {
+            setLoading(false)
             setError({ message: 'Coupon Not Supported' })
             return
         }
         
+    }
+    if (loading) {
+       return <Loading/>
     }
     return (
       <div className="page">

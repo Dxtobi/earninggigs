@@ -124,16 +124,19 @@ module.exports = function (router) {
                         user.save().then((newUser) => {
                             if (newUser.referer !== 'no referer') {
                                 userModel.findOne({ email: newUser.ref }).then((referer)=>{
-                                    referer.currentBallance = parseFloat(referer.currentBallance) + 500
-                                    ResentActivities.create({
-                                        user: referer._id,
-                                        description:`${referer.name} Just Earned NGN500 referer`
-                                    })
+                                    if (referer !== undefined || referer !== null ) {
+                                                referer.currentBallance = parseFloat(referer.currentBallance) + 500
+                                            ResentActivities.create({
+                                                user: referer._id,
+                                                description:`${referer.name} Just Earned NGN500 referer`
+                                            })
 
-                                    Referer.create({
-                                        user: referer._id,
-                                        description:`You Earned NGN500 for refering ${newUser.name}`
-                                    })
+                                            Referer.create({
+                                                user: referer._id,
+                                                description:`You Earned NGN500 for refering ${newUser.name}`
+                                            })
+                                    }
+                                    
                                     referer.save()
                                 })
                             }
