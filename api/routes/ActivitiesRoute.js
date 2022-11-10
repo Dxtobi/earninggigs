@@ -91,7 +91,9 @@ module.exports = function (router) {
                             currentBallance:newUser.currentBallance,
                             subscription:newUser.subscription,
                             adm: newUser.admin,
-                            totalEarning:newUser.totalEarning
+                            totalEarning:newUser.totalEarning,
+                            points: newUser.points,
+                            lastDatePoint:newUser.lastDatePoint
                         }
                         let token=jwt.sign(userLoad,process.env.SECRET_KEY,{expiresIn:20000000})
                         return  res.json({token:token, status:true})
@@ -454,6 +456,33 @@ module.exports = function (router) {
         try {
            
             userModel.find().sort('-totalEarning').limit(3).then((act)=>{
+                //console.log(act)
+                res.json({status:true, message:'', data:act})
+            })
+        } catch (err) {
+            console.log(err)
+            res.json({status:false, message:'something went wrong'})
+        }
+    })
+
+    router.post('/add-user-point', function (req, res) {
+        try {
+            userModel.findOne({_id:req.body.id}).then((act)=>{
+                act.points = parseInt(act.points) + parseInt(req.body.points)
+                act.lastDatePoint = new Date().getTime()
+                act.save().then(()=>{
+                    res.json({status:true, message:'', data:act})
+                })
+            })
+        } catch (err) {
+            console.log(err)
+            res.json({status:false, message:'something went wrong'})
+        }
+    })
+
+    router.get('/get-top-users-point', function (req, res) {
+        try {
+             userModel.find().sort('-points').limit(3).then((act)=>{
                 //console.log(act)
                 res.json({status:true, message:'', data:act})
             })

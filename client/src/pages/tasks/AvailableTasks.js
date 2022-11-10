@@ -60,11 +60,12 @@ function AvailableTasks() {
         
         localStorage.setItem('task-time', JSON.stringify({time:now, count:1}))
       } else {
-        console.log( now, setupTime.time)
+       
         const startDate = moment(setupTime.time);
         const timeEnd = moment(now);
         const diff = timeEnd.diff(startDate);
         const diffDuration = moment.duration(diff);
+        console.log( now, setupTime.time, timeEnd)
           if (setupTime.count === 0 && diffDuration.days()<1) {
             localStorage.setItem('task-time', JSON.stringify({time:now, count:setupTime.count+1}))
         }else

@@ -21,6 +21,7 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ModeStandbyIcon from '@mui/icons-material/ModeStandby';
 import TabIcon from '@mui/icons-material/Tab';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -73,10 +74,7 @@ export default function MenuAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
- 
-  const changeNavbarColor = () => {
-    console.log('scrolling....')
-  }
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -94,7 +92,7 @@ export default function MenuAppBar() {
     setAnchorEl(null);
   };
 
-  window.addEventListener('scroll', changeNavbarColor);
+  
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -140,7 +138,7 @@ export default function MenuAppBar() {
           <ListItem  disablePadding>
               <ListItemButton onClick={()=>navigate('/feeling-lucky')}>
                 <ListItemIcon>
-                  <ArrowUpwardIcon style={{color:'white'}}/>
+                  <ModeStandbyIcon style={{color:'white'}}/>
                 </ListItemIcon>
                 <ListItemText primary={'LUCKY SPIN'} />
               </ListItemButton>
@@ -155,7 +153,7 @@ export default function MenuAppBar() {
           </ListItem>
     
           <ListItem  disablePadding>
-              <ListItemButton onClick={()=>window.open('/dashboard')}>
+              <ListItemButton onClick={()=>navigate('/dashboard')}>
                 <ListItemIcon>
                   <TabIcon style={{color:'white'}}/>
                 </ListItemIcon>
@@ -247,7 +245,7 @@ export default function MenuAppBar() {
                   open={Boolean(anchorEl)}
                   onClose={handleClose}
                 >
-                  <MenuItem onClick={handleClose}><Link to='/dashboard' style={{textDecoration:'none', color:'white'}}>Profile</Link></MenuItem>
+                  <MenuItem onClick={handleClose}><Link to='/dashboard' style={{textDecoration:'none',}}>Profile</Link></MenuItem>
                   
                   <MenuItem onClick={()=>{
                     dispatch(clearAuth()) 

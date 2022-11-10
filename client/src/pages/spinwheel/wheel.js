@@ -3,14 +3,15 @@ import React, { useEffect, useState } from 'react';
 import './Spinner.css';
 
 function Wheel({items, onSelectItem}){
- 
   const [selectedItem, setSelectedItem] = useState(null)
   const [lastitem, setLastitem] = useState(null)
   const [spinning, setSpinning] = useState(false)
-  
+  const [loading, setLoading] = useState(null)
+
 
   const selectItem=()=>{
     setSpinning(true)
+    setLoading('rolling')
     if (selectedItem === null) {
       const selectedItem = Math.floor(Math.random() * items.length);
       if (onSelectItem) {
@@ -22,24 +23,44 @@ function Wheel({items, onSelectItem}){
     } else {
       setSelectedItem(null)
       
-      setTimeout(selectItem, 500);
+      //setTimeout(selectItem, 500);
     }
   }
 
+  const setToDef=()=>{
+    setSelectedItem(null)
+    setLastitem(null)
+    setSpinning(false)
+    setLoading(null)
+  }
+  
   useEffect(() => {
     console.log(selectedItem, spinning)
-    if (spinning) {
-    
-      setTimeout(() => {
-        setSpinning(false)
-      }, 5000);
+    if(spinning) {
+        setTimeout(() => {
+          setSpinning(false)
+          setLoading('stopped-rolling')
+        }, 5000);
+        return
     }
+    return
   }, [selectedItem, spinning])
-  
-  
-    if (!spinning) {
-      console.log('out: should have stop spinning')
+
+
+  useEffect(() => {
+   // console.log(spinning, items[lastitem], loading)
+    if (items[lastitem] !== 'NO POINTS' && !spinning && loading === 'stopped-rolling') {
+      return setLoading('won')
     }
+    return
+  //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lastitem, spinning])
+
+    console.log('-------',selectedItem,
+        lastitem,
+        spinning,
+        loading, '--------------')
+ 
 
     const wheelVars = {
       '--nb-item': items.length,
@@ -47,14 +68,13 @@ function Wheel({items, onSelectItem}){
     };
     const spinningcss = selectedItem !== null ? 'spinning' : '';
 
-   
     return (
       <div className='spin-div'>
-        {items[lastitem] === '0' && !spinning &&
+        {loading === 'won' &&
           (<div className='win-container'>
-            <div className='win-container-price'>{items[selectedItem]} POINTS</div>
+            <div className='win-container-price'>{items[selectedItem]}</div>
             <img src='/static/images/won.png' alt='' className='win-img' />
-            <button className='cancel-win'>X</button>
+            <button className='cancel-win' onClick={()=>setToDef()}>X</button>
         </div>)}
         <div className="wheel-container">
           <div className={`wheel ${spinningcss}`} style={wheelVars} onClick={selectItem}>
@@ -66,7 +86,7 @@ function Wheel({items, onSelectItem}){
           </div>
         </div>
 
-        <button className='spin-button' onClick={selectItem}>SPIN</button>
+        <button className={loading!=='rolling'?'spin-button':'spin-button-disable'} onClick={selectItem} disabled={loading !== 'rolling'?false:true}>SPIN</button>
       </div>
       
     );
