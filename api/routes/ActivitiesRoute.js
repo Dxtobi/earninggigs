@@ -136,9 +136,10 @@ module.exports = function (router) {
                                                 user: referer._id,
                                                 description:`You Earned NGN500 for refering ${newUser.name}`
                                             })
+                                            referer.save()
                                     }
                                     
-                                    referer.save()
+                                   return
                                 })
                             }
                             Coupon.findOneAndRemove({ code: req.body.coupon }).then(() => {
