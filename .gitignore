@@ -5,6 +5,8 @@
 /client/node_modules
 /client/build
 /client/firebas-config.js
+/client/firebase.json
+/client/.firbaserc
 /.pnp
 .pnp.js
 
