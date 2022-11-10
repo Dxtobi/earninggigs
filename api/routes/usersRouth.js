@@ -12,7 +12,7 @@ router.post('/register', function(req,res){
           email:req.body.email,
           phone:req.body.phone,
           password:req.body.pass,
-          ref:req.body.ref
+          ref:req.body.ref===''?'no referer':req.body.ref
       }
       userModel.findOne({email:req.body.email},(err,user)=>{
           if(err){res.json({status:false,message:err})}

@@ -22,7 +22,8 @@ const userSchema = new mongoose.Schema({
     default: 'no sub'
   },
   ref: { type: String,
-  default: 'no referer' },
+      default: 'no referer'
+  },
   points: { type: Number,
     default: 0
   },
