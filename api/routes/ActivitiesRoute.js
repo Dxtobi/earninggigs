@@ -122,7 +122,7 @@ module.exports = function (router) {
                         //user.currentBallance += parseFloat(data.type)
                         user.subscription = data.amount === '5000' ? 'BASIC' : data.amount === '10000'? 'GOLD': data.amount === '15000'? 'DIAMOND':'SIMPLE'
                         user.save().then((newUser) => {
-                            if (newUser.ref !== 'no referer') {
+                            if (newUser.ref !== 'no referer'|| newUser.ref !== "") {
                                 userModel.findOne({ email: newUser.ref }).then((referer)=>{
                                     if (referer !== undefined || referer !== null ) {
                                                 referer.currentBallance = parseFloat(referer.currentBallance) + 500
