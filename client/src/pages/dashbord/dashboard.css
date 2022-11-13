@@ -11,18 +11,25 @@
 .header-section-dash-price {
     padding: 10px;
     margin: 10px auto;
-    background: linear-gradient(55deg, #1008a6, #0698ab);
     border-radius: 5px;
     color: white;
-    box-shadow: 0px 20px 50px -10px #074063d6;
+    box-shadow: 0px 0px 50px -10px #00000082;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    min-height: 120px;
+    background: linear-gradient(45deg, #1800585c, #80008052);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header-section-dash-price-inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    font-size: x-large;
     margin: 10px auto;
+    flex-direction: column-reverse;
+    align-content: center;
 }
 .no-sub {
     height: 30vh;
@@ -38,32 +45,44 @@
     align-items: center;
 }
 .funds-btn-fund {
+    color: white;
     padding: 10px 30px;
-    border: 2px solid #1008a6;
-    background: white;
+    background: #6aff59b5;
     border-radius: 5px;
-    color: #1008a6;
+    outline: none;
+    border: none;
+    width: 50%;
 }
 .task-and-promotion {
-    
     box-shadow: 0px 20px 20px -20px #000000b5;
-    padding: 18px;
     text-decoration: none;
-    color: #1008a6;
     display: flex;
-    margin: 20px auto;
+    padding: 10px;
     border-radius: 5px;
-    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwall-background&psig=AOvVaw3CeaqBOBneZdnQ8S1F47R6&ust=1667589727075000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCNii-cXOkvsCFQAAAAAdAAAAABAE");
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100px;
+    min-width: 100px;
+}
+.display-flex__ {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .linear-bg {
-    background: linear-gradient(45deg, #07fb62, #046565fc);
+    background: linear-gradient(45deg, #e9ebea24, #8baaaa30);
     color: white;
+    backdrop-filter: blur(11px);
+    box-shadow: -1px 1px 20px -5px black;
 }
 .linear-bg1 {
-    background: linear-gradient(45deg, #0a2442, #0d0c0c);
+    background: linear-gradient(45deg, #0a244200, #0d0c0c00);
     color: white;
     background-position: top;
     background-size: cover;
+    backdrop-filter: blur(11px);
+    box-shadow: -1px 1px 20px -5px black;
 }
 .pesist-div {
     display: flex;
@@ -121,12 +140,12 @@
     font-weight: 700;
 }
 .grid-holder-back {
-    width: 100%;
     margin: auto;
-    background: #044dd1;
-    color: white;
+    background: #0c092a;
+    color: #21c219;
     box-shadow: inset -12px 5px 20px 3px #090c18b3;
     text-transform: capitalize;
+    padding: 20px;
 }
 
 .grid-holder {
@@ -214,7 +233,10 @@ img.reefer-img {
         box-shadow: inset 0px 0px 20px 2px #4650ff2d;
         overflow: scroll;
 }
-
+.header-section-dash-text {
+    text-transform: uppercase;
+    margin: 10px 0px;
+}
 .ref-div {
     display: flex;
     justify-content: center;

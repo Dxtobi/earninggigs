@@ -14,6 +14,8 @@ import { getCurrentUser, getLastTrans } from '../../reducers/actions/Auth';
 import jwt_decode from 'jwt-decode';
 import Withdraw from '../../components/market/Withdraw';
 import Loading from '../../components/fixed/Loading';
+import moment from 'moment';
+import PaidIcon from '@mui/icons-material/Paid';
 
 //const defaultSub = "no sub"
 function Dashboard() {
@@ -21,13 +23,14 @@ function Dashboard() {
   const [fundMenu, showFundMenu] = useState(false)
   const [loading, setLoading] = useState(true)
   const [fundWithddraw, showWithdrawMenu] = useState(false)
+  const [payday, setPayday] = useState(false)
   const [user, setUser] = useState({})
   const [transLast, setUserTrans] = useState({})
     const auth = useSelector((state) => state.auth);
     //const {name, currentBallance, subscription, email} = user
     
   //const navigate = useNavigate()
-  
+ 
   
   async function callUpdateUser(){
     const d = await getCurrentUser({ email: auth.user.email });
@@ -40,9 +43,22 @@ function Dashboard() {
       setLoading(false)
       const user = jwt_decode(d.token);
       setUser(user)
+      const date = new Date().getTime()
+      const oldDate = moment(parseInt(user.lastDateSub));
+      const newTime = moment(date);
+      const diff = newTime.diff(oldDate);
+      const diffDuration = moment.duration(diff);
+      if (user.subscription !== 'SIMPLE' && diffDuration.days() > 29) {
+        setPayday(true)
+      } else if (user.subscription === 'SIMPLE' && diffDuration.days() < 6){
+        setPayday(true)
+      } else {
+        setPayday(false)
+      }
+      
     }
     
-    //console.log(user);
+   
     return
   }
 
@@ -62,56 +78,53 @@ function Dashboard() {
       <div className="page" >
       <div className="page-inner" >
         {fundWithddraw && <Withdraw showWithdrawMenu={showWithdrawMenu} />}
-              <div className='header-section-dash'>
-                  <div className='header-section-dash-inline'><div>Hello</div><div>{user.name}</div></div>
-                  <div className='header-section-dash-price'>
-                      <div className='header-section-dash-price-inner'>
-                          <div>Balance</div>
-                          <div>₦{parseFloat(user.currentBallance)}</div>
-                      </div>
-            <div className='header-section-dash-inline'><div>Total Earnings</div><div>₦{parseFloat(user.totalEarning)}</div></div>
-                      <div className='header-section-dash-inline'><div>Total Balance</div><div>₦{parseFloat(user.totalEarning)+parseFloat(user.currentBallance)}</div></div>
-                      <div className='header-section-dash-inline'><div>Subscription</div><div>{user.subscription}</div></div>
-                  </div>
+        <div className='header-section-dash'>
+          <div className='header-section-dash-text' style={{color:'gray'}}><div>{user.subscription}</div></div>
+          <div className='header-section-dash-text' ><div>{user.name}</div></div>
+            
+          <div className='header-section-dash-price'>
+             <div className='header-section-dash-price-inner'>
+                <div style={{color:'gray'}}>Total Balance</div>
+                <div style={{fontSize:'xx-large'}}>₦{parseFloat(user.totalEarning)+parseFloat(user.currentBallance)}</div>
+             </div>
+           
+          </div>
+          <div className='header-section-dash-inline'><div>Total Earnings</div><div>₦{parseFloat(user.totalEarning)}</div></div>
+                      <div className='header-section-dash-inline'><div>Wallet</div><div>₦{parseFloat(user.currentBallance)}</div></div>
               </div>
               <div className='funds-btn'>
                   <button onClick={()=>showFundMenu(true)} className='funds-btn-fund'>FUND</button>
-                  <button onClick={()=>showWithdrawMenu(true)} className='funds-btn-fund'>WITHDRAW</button>
+                  {payday&&<button onClick={()=>showWithdrawMenu(true)} className='funds-btn-fund'>WITHDRAW</button>}
         </div>
-        <h4>Last Transactions</h4>
+       { transLast && <h4>Last Transactions</h4>}
         {transLast &&
           <div className={`transfers ${transLast.status}`}>
           <div>{transLast.status}</div>
         </div>
         }
-        <h4>Start Earning</h4>
-        {
-          user.subscription ==="no sub" ? (<Link to='/subscribe' className='task-and-promotion linear-bg'>
-                Subscribe To Start Earning
-          </Link>) : (
-            <Link to='/tasks' className='task-and-promotion linear-bg'>
-                <div>
+        
+        <div className='display-flex__'>
+          {
+            user.subscription ==="no sub" ? (<Link to='/subscribe' className='task-and-promotion linear-bg'>
+                  Subscribe To Start Earning
+            </Link>) : (
+                <Link to='/tasks' className='task-and-promotion linear-bg'>
                   <div style={{fontSize:'x-large'}}>Earn</div>
-                      <div>
-                          Earn daily by performing tasks on your social media account.
-                      </div>
-                      <br/>
-                    <div >Get started</div>
-                </div>
-              </Link>
-              )
-        }
-        <h4>Boost Accounts</h4>
+                  <br/><br/>
+            <PaidIcon style={{ fontSize: 40 }} />
+            <br/><br/>
+                  <div >Get started</div>
+                </Link>
+                )
+            }
               <Link to='/create-tasks' className='task-and-promotion linear-bg1'>
-                  <div >
                     <div style={{fontSize:'x-large'}}>Boot </div>
-                      <div>
-                        Boost Your Social Media accounts with real followers and likes.
-                      </div>
-                    <br/>
+                    <br/><br/>
+            <PaidIcon style={{ fontSize: 40 }} />
+            <br/><br/>
                     <div >Get started</div>
-                  </div>
               </Link>
+       </div>
               {/*<div className='pesist-div'>
                   <div>Advertise with us</div>
                   <button className='pesist-div-btn' onClick={()=>navigate('/post-ads')}>Post Advert</button>

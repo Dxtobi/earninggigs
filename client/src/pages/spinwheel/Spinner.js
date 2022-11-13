@@ -90,7 +90,7 @@ function Spinner() {
     return (
       <div className="page">
             <div className='page-inner wheel-bg'>
-          <h1 style={{ textAlign: 'center' }}>SPIN TO<br />EARN POINT</h1>
+          <h1 style={{ textAlign: 'center' }}>25K WEEKLY<br />SPIN WHEEL</h1>
           {
             notExusted && <Wheel onSelectItem={onSelectItem} user={user} items={places} />
           }

@@ -26,11 +26,10 @@ function AvailableTasks() {
     const [type, setType] = useState(1)
     const [expired, setExpired] = useState(false)
     useEffect(() => {
-      
-        
         callTasks()
         checkTasksTimeOnUpdate()
         if (user.user.subscription === 'no sub') {
+          setExpired(true)
             return setType(2)
         }else if (user.user.subscription === 'BASIC') {
             return setType(100)
@@ -52,15 +51,12 @@ function AvailableTasks() {
     }
   }
   const checkTasksTime = () => {
-    
     let now = new Date().getTime()
       let setupTime = JSON.parse(localStorage.getItem('task-time'))
       console.log(setupTime)
       if (setupTime === null) {
-        
         localStorage.setItem('task-time', JSON.stringify({time:now, count:1}))
       } else {
-       
         const startDate = moment(setupTime.time);
         const timeEnd = moment(now);
         const diff = timeEnd.diff(startDate);
@@ -145,7 +141,8 @@ function AvailableTasks() {
 
         <div className='page'>
           <div className='page-inner'>
-            <h3>TASKS COMPLETED <br/> FOR THE DAY</h3>
+            <h5>TASKS COMPLETED <br/> FOR THE DAY</h5>
+            {user.user.subscription === 'no sub' &&<div>Note: Task are available only to subscribed users.</div>}
           </div>
         </div>
       )
@@ -161,6 +158,7 @@ function AvailableTasks() {
                 expired && <div>Expired</div>
         }
         <div>Completed tasks would be confirmed before withdrawal is approved.</div>
+        
         <br />
         <br/>
               {

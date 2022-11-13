@@ -30,7 +30,10 @@ const userSchema = new mongoose.Schema({
   lastDatePoint: {
     type: Number,
     default: 0
-  }
-  ,
+  },
+  lastDateSub: {
+    type: Number,
+    default: 0
+  },
 });
 module.exports=mongoose.model('user',userSchema)

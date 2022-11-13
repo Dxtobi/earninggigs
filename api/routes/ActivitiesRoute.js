@@ -23,7 +23,7 @@ const htmlReturn = (e) => {
         align-items: center;">
         <h2>${e.topic}</h2>
         <br/>
-        <h4>Hello ${e.name} ${e.message}</h4>
+        <h4>Hello ${e.name} <br/>${e.message}</h4>
     </div>`
     )
 }
@@ -32,12 +32,9 @@ const couponGenerate = () => {
     let result = ''
     let charsL = chars.length
     //let random = new Random();
-
     for(let i = 0; i<11; i++) {
         result += chars.charAt(Math.floor(Math.random() * charsL));
     }
-
-   
     return result
 }
 
@@ -93,7 +90,8 @@ module.exports = function (router) {
                             adm: newUser.admin,
                             totalEarning:newUser.totalEarning,
                             points: newUser.points,
-                            lastDatePoint:newUser.lastDatePoint
+                            lastDatePoint:newUser.lastDatePoint,
+                            lastDateSub:newUser.lastDateSub
                         }
                         let token=jwt.sign(userLoad,process.env.SECRET_KEY,{expiresIn:20000000})
                         return  res.json({token:token, status:true})
@@ -121,6 +119,7 @@ module.exports = function (router) {
                     userModel.findOne({ email: req.body.email }).then((user) => {
                         //user.currentBallance += parseFloat(data.type)
                         user.subscription = data.amount === '5000' ? 'BASIC' : data.amount === '10000'? 'GOLD': data.amount === '15000'? 'DIAMOND':'SIMPLE'
+                        user.lastDateSub = new Date().getTime()
                         user.save().then((newUser) => {
                             if (newUser.ref !== 'no referer' || newUser.ref !== "") {
                                 userModel.findOne({ email: newUser.ref }).then((referer) => {
@@ -347,11 +346,19 @@ module.exports = function (router) {
     router.get('/get-tasks/:id', function (req, res) {
         console.log(req.params)
         try {
-            Activities.find().limit(10).then((data) => {
-                console.log(data.length)
-                return res.json({status:true, message:'200', data:data})
-            }).catch((err) => {
-                console.log(err)
+
+            // Get the count of all users
+            Activities.count().exec(function (err, count) {
+
+                // Get a random entry
+                let random = Math.floor(Math.random() * count)
+            
+                // Again query all users but only fetch one offset by our random #
+                Activities.find().skip(random).exec(
+                function (err, result) {
+                    // Tada! random user
+                        return res.json({status:true, message:'200', data:result})
+                })
             })
         } catch (err) {
             console.log(err)
@@ -390,6 +397,7 @@ module.exports = function (router) {
                     use.currentBallance = 0
                     use.totalEarning = 0
                     use.subscription = 'no sub'
+                    use.lastDateSub = 0
                     use.save()
                     sendEmail({to:use.email, subject:'Withdrawal Approved', text:htmlReturn({name:use.name, topic:'Transaction Request', message:'Congratulations Your Withdrawal Request has been Approved ANd Your Money Is On its way..'})})
                 })
@@ -487,7 +495,7 @@ module.exports = function (router) {
 
     router.get('/get-top-users-point', function (req, res) {
         try {
-             userModel.find().sort('-points').limit(3).then((act)=>{
+             userModel.find().sort('-points').limit(5).then((act)=>{
                 //console.log(act)
                 res.json({status:true, message:'', data:act})
             })

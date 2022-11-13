@@ -1,8 +1,31 @@
 const userModel=require('../models/userModel')
 const jwt=require('jsonwebtoken')
 const bcrypt = require('bcrypt')
+const sendEmail = require('../sendEmail');
 require('dotenv').config()
+
 module.exports=function(router){
+
+
+    const htmlReturn = (e) => {
+        return (
+            `<div style="
+            background: linear-gradient(7deg, #1e5ae0, #79195fc9, #4861f1f2);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px 0px #279fd07d;
+            display: flex;
+            flex-direction: column;
+            align-items: center;">
+            <h2>${e.topic}</h2>
+            <br/>
+            <h4>Hello ${e.name} <br/>${e.message}</h4>
+        </div>`
+        )
+    }
+
+
 
 //GET
 router.post('/register', function(req,res){
@@ -22,7 +45,10 @@ router.post('/register', function(req,res){
                       userData.password=hash
                       userModel.create(userData,(err)=>{
                           if(err){res.json({status:false, message:err})}
-                          else{res.json({status:true, user:userData, message:`Registration sucessful!!!!`})}
+                          else {
+                            sendEmail({to:use.email, subject:'EARNGIGS', text:htmlReturn({name:userData.name, topic:'Welcome', message:'Welcome to Earngigs you do not forget to purchase a subscription.'})})
+                              res.json({ status: true, user: userData, message: `Registration sucessful!!!!` })
+                          }
                       })
                   })
               }

@@ -5,9 +5,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgb(255, 255, 255);
+    background: #0d0a2978;
     left: 0;
     width: 100%;
+    backdrop-filter: blur(9px);
 }
 .fl-div1 {
     margin: 20px;

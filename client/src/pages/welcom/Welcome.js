@@ -185,6 +185,7 @@ function Welcome() {
       }
       <div ref={myRef3} className="page-inner-100p">
       <div className="sectionOne-text-top" style={{textAlign:'center'}}>AVAILABLE SUBSCRIPTIONS</div>
+        <div>
         <div className='price-comp'>
           <div className='price-type'>S I M P L E</div>
           <div className='price-amount'>₦1500</div>
@@ -196,6 +197,8 @@ function Welcome() {
           <br/>
           <Link className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} to='/register'>SUBSCRIBE</Link>
         </div>
+        </div>
+        <div>
         <div className='price-comp'>
           <div className='price-type'>B A S I C</div>
           <div className='price-amount'>₦5000</div>
@@ -207,7 +210,9 @@ function Welcome() {
           <br/>
           <Link className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} to='/register'>SUBSCRIBE</Link>
         </div>
-         <div className='price-comp'>
+        </div>
+        <div>
+        <div className='price-comp'>
           <div className='price-type'>G O L D</div>
           <div className='price-amount'>₦10000</div>
           <div className='price-discretion'>
@@ -218,9 +223,12 @@ function Welcome() {
           <br/>
           <Link className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} to='/register'>SUBSCRIBE</Link>
         </div>
+         </div>
         
+        <div>
         <div className='price-comp'>
-          <div className='price-type'>D I A M O N D</div>
+        
+         <div className='price-type'>D I A M O N D</div>
           <div className='price-amount'>₦30000</div>
           <div className='price-discretion'>
             The return value for each task is at ₦450<br />
@@ -230,6 +238,8 @@ function Welcome() {
           <br/>
           <Link className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} to='/register'>SUBSCRIBE</Link>
          </div>
+         
+        </div>
       </div>
 
       {
