@@ -118,7 +118,7 @@ function Dashboard() {
                 )
             }
               <Link to='/create-tasks' className='task-and-promotion linear-bg1'>
-                    <div style={{fontSize:'x-large'}}>Boot </div>
+                    <div style={{fontSize:'x-large'}}>Boost</div>
                     <br/><br/>
             <PaidIcon style={{ fontSize: 40 }} />
             <br/><br/>

@@ -46,7 +46,7 @@ router.post('/register', function(req,res){
                       userModel.create(userData,(err)=>{
                           if(err){res.json({status:false, message:err})}
                           else {
-                            sendEmail({to:use.email, subject:'EARNGIGS', text:htmlReturn({name:userData.name, topic:'Welcome', message:'Welcome to Earngigs you do not forget to purchase a subscription.'})})
+                            sendEmail({to:userData.email, subject:'EARNGIGS', text:htmlReturn({name:userData.name, topic:'Welcome', message:'Welcome to Earngigs you do not forget to purchase a subscription.'})})
                               res.json({ status: true, user: userData, message: `Registration sucessful!!!!` })
                           }
                       })
