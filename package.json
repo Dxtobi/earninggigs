@@ -10,7 +10,7 @@
     "docker-build-webapp": "concurrently \"npm run docker-build-client\" \"npm start\"",
     "build": "cd client && npm run build",
     "client-install": "cd client && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build"
+    "server-postbuild": "npm run install-client && npm run build"
   },
   "engines": {
     "node": "16.13.1",
