@@ -203,7 +203,7 @@ export default function MenuAppBar() {
         </div>
       </Drawer>
       <AppBar position="fixed" style={{background:'#ffffff00', color:'black'}}  >
-        <div style={{background:'#4a0e7780', color:'white'}} className='enableBlur'>
+        <div style={{background:'#ffffff00', color:'white'}} className='enableBlur'>
           <Toolbar className='disableBlur'>
             <IconButton onClick={handleDrawerOpen}
               size="large"

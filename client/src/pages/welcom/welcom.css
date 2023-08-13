@@ -3,15 +3,28 @@
     font-weight: bolder;
     line-height: 1.8;
     margin: 10px 0px;
+    background: linear-gradient(45deg, #fffffe, #c7c7c7);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
   }
   .sectionOne-text-sec {
     font-size: large;
+    background: linear-gradient(45deg, #fffffe, #210062);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
   }
   
   .sectionOne-text {
     font-size: large;
     line-height: 1.5;
     margin: 25px 0px;
+    background: linear-gradient(45deg, #fffffe, #dcdcdc);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    
   }
   
   .special-text {
@@ -41,7 +54,7 @@
   padding: 25px;
   box-shadow: 0px 20px 50px -5px #0000005c;
   border-radius: 9px;
-  background: #02010c;
+  background: #171717;
 }
 .rating-text {
     line-height: 1.5;
@@ -64,13 +77,13 @@
     align-items: center;
     box-shadow: 0px 20px 50px -10px #0000004f;
     border-radius: 10px;
-    background: #5a107e80;
+    background: #22212280;
 }
 .price-type {
     margin: 20px auto;
     font-weight: 900;
     font-size: larger;
-    color: #636363;
+    color: #d7d7d7;
 }
 .price-amount {
     font-size: xx-large;
