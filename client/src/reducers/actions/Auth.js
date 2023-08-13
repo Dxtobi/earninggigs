@@ -63,6 +63,7 @@ export const register = async (data) => {
      } )
      .catch( err =>
      { 
+      console.log(err)
         return {status:'false', message:'something went wrong'}
      }
        );
@@ -83,8 +84,10 @@ export const login = async (data) => {
             }
         return res.data
      } )
-     .catch( err =>
-     { 
+       .catch(err =>
+     
+       { 
+          console.log(err)
         return {status:'false', message:'something went wrong'}
      }
        );

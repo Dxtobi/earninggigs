@@ -112,7 +112,7 @@ export default function MenuAppBar() {
       >
         <div className='enableBlur' style={{color:'white'}}>
           <DrawerHeader >
-          <IconButton onClick={handleDrawerClose} style={{color:'#ffff'}}>
+          <IconButton onClick={handleDrawerClose} style={{color:'#ffffee'}}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
@@ -164,14 +164,14 @@ export default function MenuAppBar() {
         <Divider />
         
         <List>
-          <ListItem  disablePadding>
+          {/* <ListItem  disablePadding>
               <ListItemButton onClick={()=>window.open('https://wa.me/message/VEQ45B6UTXT3E1', '_blank')}>
                 <ListItemIcon>
                   <WhatsAppIcon style={{color:'white'}}/>
                 </ListItemIcon>
                 <ListItemText primary={'WHATSAPP'} />
               </ListItemButton>
-          </ListItem>
+          </ListItem> */}
           
           <ListItem  disablePadding>
               <ListItemButton onClick={()=>window.open('https://twitter.com/earningig_ng', '_blank')}>
