@@ -21,7 +21,7 @@ const style = {
     p: 4,
   };
 //import { Link } from 'react-router-dom'
-//to={{ pathname: "https://wa.me/message/IAU7SLUDMHWQN1" }} target="_blank"
+//to={{ pathname: "https://wa.me/message/QXCFQ24PD7BTD1" }} target="_blank"
 export default function Subscriptions() {
     const auth = useSelector((state) => state.auth);
     const {email} = auth.user
@@ -148,7 +148,7 @@ export default function Subscriptions() {
                     S I M P L E
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <a href='https://wa.me/message/IAU7SLUDMHWQN1' rel="noreferrer" target="_blank" className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} >SUBSCRIBE</a>
+                <a href='https://wa.me/message/QXCFQ24PD7BTD1' rel="noreferrer" target="_blank" className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} >SUBSCRIBE</a>
                     </Typography>
                     <br />
                 <br />
@@ -156,7 +156,7 @@ export default function Subscriptions() {
                     B A S I C
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <a href='https://wa.me/message/IAU7SLUDMHWQN1' rel="noreferrer" target="_blank" className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} >SUBSCRIBE</a>
+                <a href='https://wa.me/message/QXCFQ24PD7BTD1' rel="noreferrer" target="_blank" className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} >SUBSCRIBE</a>
                 </Typography>
 
                 <br/>
@@ -165,7 +165,7 @@ export default function Subscriptions() {
                     G O L D
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <a href='https://wa.me/message/IAU7SLUDMHWQN1' rel="noreferrer" target="_blank" className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} >SUBSCRIBE</a>
+                <a href='https://wa.me/message/QXCFQ24PD7BTD1' rel="noreferrer" target="_blank" className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} >SUBSCRIBE</a>
                 </Typography>
                 
                 <br/>
@@ -174,7 +174,7 @@ export default function Subscriptions() {
                     D I A M O N D
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <a href='https://wa.me/message/IAU7SLUDMHWQN1' rel="noreferrer" target="_blank" className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} >SUBSCRIBE</a>
+                <a href='https://wa.me/message/QXCFQ24PD7BTD1' rel="noreferrer" target="_blank" className='scroll-btn' style={{background:'black', width:'90%', textDecoration:'none', textAlign:'center'}} >SUBSCRIBE</a>
                 </Typography>
                 </Box>
             </Modal>

@@ -68,7 +68,7 @@ export default function SubscriptionsFund() {
           <div className="page-inner-100p">
             <div className="sectionOne-text-top" style={{textAlign:'center'}}>PURCHASE COUPON </div>
                 <div className='price-comp'>
-                <a  href='https://wa.me/message/IAU7SLUDMHWQN1'
+                <a  href='https://wa.me/message/QXCFQ24PD7BTD1'
                     rel="noreferrer" target="_blank"
                     className='scroll-btn'
                     style={{ background: 'black', width: '90%', textDecoration: 'none', textAlign: 'center' }}>PURCHASE</a>
