@@ -87,7 +87,7 @@ router.post('/login', (req,res)=>{
                     }
                     else {
                         console.log('not match')
-                        res.json({status:false, message:"Customer not found"})
+                        res.json({status:false, message:"wrong details"})
                     }
                 }
                 catch(err){
@@ -95,7 +95,7 @@ router.post('/login', (req,res)=>{
                 }
             }    
             else{
-                    res.json({status:false,message:"Customer not found"})
+                    res.json({status:false,message:"User not found"})
                 }
             }
         })
