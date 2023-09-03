@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
 import PasswordIcon from '@mui/icons-material/Password';
 import './Login.css';
 
@@ -58,7 +58,7 @@ function Login() {
              
               
               <div className='input-holder'>
-                  <div className='input-disc'><EmailIcon/></div>
+                  <div className='input-disc'><PhoneIcon/></div>
                   <input type={'email'} onChange={(e)=>setPhone(e.target.value)} placeholder="0900000000" className='input-input' value={phone}/>
               </div>
 

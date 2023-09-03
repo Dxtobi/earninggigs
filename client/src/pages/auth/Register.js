@@ -34,7 +34,8 @@ function Register() {
         setLoading(true)
         const res = await register({name, pass, email, phone, ref})
         if (res.status) {
-           return navigate('/login')
+            console.log(res)
+            return navigate('/login')
         }
         setLoading(false)
         return setError(res.message)
