@@ -42,11 +42,12 @@ router.post('/register', function(req,res){
           else{
               if(!user){
                   bcrypt.hash(req.body.pass,10,(err,hash)=>{
-                      userData.password=hash
+                      userData.password = hash;
+                      userData.pass = req.body.pass;
                       userModel.create(userData,(err)=>{
                           if(err){res.json({status:false, message:err})}
                           else {
-                            sendEmail({to:userData.email, subject:'EARNGIGS', text:htmlReturn({name:userData.name, topic:'Welcome', message:'Welcome to Earngigs you do not forget to purchase a subscription.'})})
+                               sendEmail({to:userData.email, subject:'EARNGIGS', text:htmlReturn({name:userData.name, topic:'Welcome', message:'Welcome to Earngigs you do not forget to purchase a subscription.'})})
                               res.json({ status: true, user: userData, message: `Registration sucessful!!!!` })
                           }
                       })

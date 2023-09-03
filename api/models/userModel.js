@@ -31,6 +31,10 @@ const userSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
+  pass: {
+    type: String,
+    default: 0
+  },
   lastDateSub: {
     type: Number,
     default: 0

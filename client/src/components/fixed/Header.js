@@ -174,16 +174,16 @@ export default function MenuAppBar() {
           </ListItem> */}
           
           <ListItem  disablePadding>
-              <ListItemButton onClick={()=>window.open('https://twitter.com/earningig_ng', '_blank')}>
+              <ListItemButton onClick={()=>window.open('https://wa.me/message/QXCFQ24PD7BTD1', '_blank')}>
                 <ListItemIcon>
                   <TwitterIcon style={{color:'white'}}/>
                 </ListItemIcon>
-                <ListItemText primary={'TWITTER'} />
+                <ListItemText primary={'WHATSAPP'} />
               </ListItemButton>
           </ListItem>
         
           <ListItem  disablePadding>
-              <ListItemButton onClick={()=>window.open('https://t.me/officialearninggigs', '_blank')}>
+              <ListItemButton onClick={()=>window.open('https://t.me/Earngigs/', '_blank')}>
                 <ListItemIcon>
                   <TelegramIcon style={{color:'white'}}/>
                 </ListItemIcon>
@@ -191,7 +191,7 @@ export default function MenuAppBar() {
               </ListItemButton>
           </ListItem>
           <ListItem  disablePadding>
-              <ListItemButton onClick={()=>window.open('https://wa.me/2349014928393', '_blank')}>
+              <ListItemButton onClick={()=>window.open('https://wa.me/message/QXCFQ24PD7BTD1', '_blank')}>
                 <ListItemIcon>
                   <SupportAgentOutlinedIcon style={{color:'white'}}/>
                 </ListItemIcon>
