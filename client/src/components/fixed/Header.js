@@ -14,7 +14,7 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import SupportAgentOutlinedIcon from '@mui/icons-material/SupportAgentOutlined';
-import TwitterIcon from '@mui/icons-material/Twitter';
+
 //import FacebookIcon from '@mui/icons-material/Facebook';
 import TelegramIcon from '@mui/icons-material/Telegram';
 //import InstagramIcon from '@mui/icons-material/Instagram';
@@ -176,7 +176,7 @@ export default function MenuAppBar() {
           <ListItem  disablePadding>
               <ListItemButton onClick={()=>window.open('https://wa.me/message/QXCFQ24PD7BTD1', '_blank')}>
                 <ListItemIcon>
-                  <TwitterIcon style={{color:'white'}}/>
+                  <WhatsAppIcon style={{color:'white'}}/>
                 </ListItemIcon>
                 <ListItemText primary={'WHATSAPP'} />
               </ListItemButton>

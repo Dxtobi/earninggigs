@@ -144,7 +144,7 @@ export default function Subscriptions() {
                 <Box sx={style}>
                 <br/>
                 <br/>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
+                <Typography id="modal-modal-title" variant="h6" component="h2" style={{color:'#000'}}>
                     S I M P L E
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
@@ -152,7 +152,7 @@ export default function Subscriptions() {
                     </Typography>
                     <br />
                 <br />
-                <Typography id="modal-modal-title" variant="h6" component="h2">
+                <Typography id="modal-modal-title" variant="h6" component="h2" style={{color:'#000'}}>
                     B A S I C
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
@@ -161,7 +161,7 @@ export default function Subscriptions() {
 
                 <br/>
                 <br/>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
+                <Typography id="modal-modal-title" variant="h6" component="h2" style={{color:'#000'}}>
                     G O L D
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
@@ -170,7 +170,7 @@ export default function Subscriptions() {
                 
                 <br/>
                 <br/>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
+                <Typography id="modal-modal-title" variant="h6" component="h2" style={{color:'#000'}}>
                     D I A M O N D
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
